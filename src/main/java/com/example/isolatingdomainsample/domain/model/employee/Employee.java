@@ -1,4 +1,4 @@
-package com.example.isolatingdomainsample.domain.model;
+package com.example.isolatingdomainsample.domain.model.employee;
 
 /**
  * 従業員
@@ -8,6 +8,11 @@ public class Employee {
   private Name name;
   private MailAddress mailAddress;
   private PhoneNumber phoneNumber;
+
+  @Deprecated
+  public Employee() {
+    this(new EmployeeNumber(), new Name(), new MailAddress(), new PhoneNumber());
+  }
 
   public Employee(EmployeeNumber employeeNumber, Name name, MailAddress mailAddress, PhoneNumber phoneNumber) {
     this.employeeNumber = employeeNumber;
