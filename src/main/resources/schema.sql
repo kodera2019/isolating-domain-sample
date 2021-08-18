@@ -63,3 +63,15 @@ CREATE TABLE 給与.従業員のメールアドレス (
     ,FOREIGN KEY (従業員ID) REFERENCES  給与.従業員(従業員ID)
     ,FOREIGN KEY (従業員メールアドレスID) REFERENCES  給与.従業員のメールアドレス履歴(従業員メールアドレスID)
 );
+
+CREATE TABLE 給与.契約中 (
+                        従業員ID  INTEGER PRIMARY KEY,
+                        登録日時 TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    ,FOREIGN KEY (従業員ID) REFERENCES 給与.従業員(従業員ID)
+);
+
+CREATE TABLE 給与.契約終了 (
+                         従業員ID  INTEGER PRIMARY KEY,
+                         登録日時 TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    ,FOREIGN KEY (従業員ID) REFERENCES 給与.従業員(従業員ID)
+);

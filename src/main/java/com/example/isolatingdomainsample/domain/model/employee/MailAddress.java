@@ -1,4 +1,4 @@
-package com.example.isolatingdomainsample.domain.model;
+package com.example.isolatingdomainsample.domain.model.employee;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

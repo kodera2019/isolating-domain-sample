@@ -1,4 +1,4 @@
-package com.example.isolatingdomainsample.domain.model;
+package com.example.isolatingdomainsample.domain.model.employee;
 
 /**
  * 従業員番号

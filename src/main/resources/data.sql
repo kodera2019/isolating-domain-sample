@@ -92,3 +92,5 @@ values
     (5, 5, 'goro@example.com'),
     (6, 6, 'rokuro@example.com')
 ;
+
+INSERT INTO 給与.契約中(従業員ID) values(1),(2),(3),(4),(5),(6);
