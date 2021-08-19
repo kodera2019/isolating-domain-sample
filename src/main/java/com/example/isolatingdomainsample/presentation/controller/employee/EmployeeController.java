@@ -18,7 +18,7 @@ public class EmployeeController {
 
   EmployeeQueryService employeeQueryService;
 
-  public EmployeeController(EmployeeQueryService employeeQueryService) {
+  EmployeeController(EmployeeQueryService employeeQueryService) {
     this.employeeQueryService = employeeQueryService;
   }
 

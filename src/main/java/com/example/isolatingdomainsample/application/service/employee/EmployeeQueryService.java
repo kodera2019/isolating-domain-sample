@@ -20,7 +20,7 @@ public class EmployeeQueryService {
     return employeeRepository.choose(employeeNumber);
   }
 
-  public EmployeeQueryService(EmployeeRepository employeeRepository) {
+  EmployeeQueryService(EmployeeRepository employeeRepository) {
     this.employeeRepository = employeeRepository;
   }
 }

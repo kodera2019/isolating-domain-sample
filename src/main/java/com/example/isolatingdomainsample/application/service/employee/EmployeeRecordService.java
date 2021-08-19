@@ -21,7 +21,7 @@ public class EmployeeRecordService {
     employeeRepository.registerExpiredContract(employee);
   }
 
-  public EmployeeRecordService(EmployeeRepository employeeRepository) {
+  EmployeeRecordService(EmployeeRepository employeeRepository) {
     this.employeeRepository = employeeRepository;
   }
 }
