@@ -8,4 +8,8 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface EmployeeMapper {
   Employee selectByEmployeeNumber(@Param("employeeNumber")EmployeeNumber employeeNumber);
+
+  void deleteInspireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
+
+  void insertExpireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
 }
