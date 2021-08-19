@@ -21,7 +21,7 @@ public class EmployeeDataSource implements EmployeeRepository {
     mapper.insertExpireContract(employee.employeeNumber());
   }
 
-  public EmployeeDataSource(EmployeeMapper mapper) {
+  EmployeeDataSource(EmployeeMapper mapper) {
     this.mapper = mapper;
   }
 }
