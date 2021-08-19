@@ -27,4 +27,12 @@
         WHERE 従業員.従業員ID = #{employeeNumber.value}
     </select>
 
+    <delete id="deleteInspireContract">
+        DELETE FROM 給与.契約中 WHERE 従業員ID = #{employeeNumber.value}
+    </delete>
+
+    <insert id="insertExpireContract">
+        INSERT INTO 給与.契約終了 (従業員ID) VALUES (#{employeeNumber.value});
+    </insert>
+    
 </mapper>
