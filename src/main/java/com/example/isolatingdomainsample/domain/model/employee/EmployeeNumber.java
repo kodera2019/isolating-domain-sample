@@ -10,6 +10,10 @@ public class EmployeeNumber {
   public EmployeeNumber() {
   }
 
+  public static EmployeeNumber from(String value) {
+    return new EmployeeNumber(Integer.parseInt(value));
+  }
+
   public EmployeeNumber(Integer employeeNumber) {
     this.value = employeeNumber;
   }
