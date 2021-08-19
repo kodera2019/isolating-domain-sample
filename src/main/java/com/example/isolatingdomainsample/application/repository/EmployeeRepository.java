@@ -8,4 +8,6 @@ import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
  */
 public interface EmployeeRepository {
   Employee choose(EmployeeNumber employeeNumber);
+
+  void registerExpiredContract(Employee employee);
 }
