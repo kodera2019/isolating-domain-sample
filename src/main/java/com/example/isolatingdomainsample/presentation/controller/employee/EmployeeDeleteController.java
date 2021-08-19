@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * 従業員削除
  */
 @Controller
-@RequestMapping("employee/{employeeNumber/delete}")
+@RequestMapping("employees/{employeeNumber}/delete")
 public class EmployeeDeleteController {
 
   EmployeeQueryService employeeQueryService;
