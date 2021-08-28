@@ -3,6 +3,7 @@ package com.example.isolatingdomainsample.application.service.employee;
 import com.example.isolatingdomainsample.application.repository.EmployeeRepository;
 import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
+import com.example.isolatingdomainsample.domain.model.employee.NameToChange;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,13 @@ public class EmployeeRecordService {
    */
   public EmployeeNumber prepareNewContract() {
     return employeeRepository.registerNew();
+  }
+
+  /**
+   * 従業員名登録
+   */
+  public void registerName(NameToChange nameToChange) {
+    employeeRepository.registerName(nameToChange.employeeNumber(), nameToChange.name());
   }
 
   /**
