@@ -47,6 +47,13 @@ public class EmployeeRecordService {
   }
 
   /**
+   * 従業員契約開始
+   */
+  public void inspireContract(EmployeeNumber employeeNumber) {
+    employeeRepository.registerInspireContract(employeeNumber);
+  }
+
+  /**
    * 従業員契約終了
    */
   public void expireContract(Employee employee) {
