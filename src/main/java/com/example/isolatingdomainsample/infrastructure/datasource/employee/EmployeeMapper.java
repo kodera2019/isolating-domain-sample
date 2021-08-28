@@ -34,6 +34,8 @@ public interface EmployeeMapper {
 
   void insertEmployeePhoneNumber(@Param("employeeNumber") EmployeeNumber employeeNumber, @Param("phoneNumberId") Integer phoneId, @Param("phoneNumber") PhoneNumber phoneNumber);
 
+  void insertInspireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
+
   void deleteEmployeePhoneNumber(@Param("employeeNumber") EmployeeNumber employeeNumber);
 
   void deleteInspireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
