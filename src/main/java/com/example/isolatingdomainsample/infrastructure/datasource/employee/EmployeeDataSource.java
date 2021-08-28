@@ -4,6 +4,7 @@ import com.example.isolatingdomainsample.application.repository.EmployeeReposito
 import com.example.isolatingdomainsample.domain.model.employee.ContractingEmployees;
 import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
+import com.example.isolatingdomainsample.domain.model.employee.Name;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -26,6 +27,14 @@ public class EmployeeDataSource implements EmployeeRepository {
     EmployeeNumber employeeNumber = new EmployeeNumber(mapper.newEmployeeNumber());
     mapper.insertEmployee(employeeNumber);
     return employeeNumber;
+  }
+
+  @Override
+  public void registerName(EmployeeNumber employeeNumber, Name name) {
+    Integer nameId = mapper.newEmployeeNameIdentifier();
+    mapper.insertEmployeeNameHistory(nameId, employeeNumber, name);
+    mapper.deleteEmployeeName(employeeNumber);
+    mapper.insertEmployeeName(employeeNumber, nameId, name);
   }
 
   @Override
