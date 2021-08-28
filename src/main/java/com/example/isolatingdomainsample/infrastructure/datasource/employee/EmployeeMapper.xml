@@ -38,6 +38,23 @@
     <insert id="insertEmployee">
         INSERT INTO 給与.従業員 (従業員ID) VALUES (#{employeeNumber.value});
     </insert>
+    
+    <select id="newEmployeeNameIdentifier" resultType="Integer">
+        select nextval('給与.従業員名ID')
+    </select>
+    <insert id="insertEmployeeNameHistory">
+        INSERT INTO 給与.従業員の名前履歴 (従業員名ID, 従業員ID, 従業員名)
+        VALUES (#{id}, #{employeeNumber.value}, #{name.value});
+    </insert>
+
+    <insert id="insertEmployeeName">
+        INSERT INTO 給与.従業員の名前 (従業員名ID, 従業員ID, 従業員名)
+        VALUES (#{employeeNumber.value}, #{nameId}, #{name.value});
+    </insert>
+
+    <delete id="deleteEmployeeName">
+        DELETE FROM 給与.従業員の名前 WHERE 従業員ID = #{employeeNumber.value}
+    </delete>
 
     <delete id="deleteInspireContract">
         DELETE FROM 給与.契約中 WHERE 従業員ID = #{employeeNumber.value}
