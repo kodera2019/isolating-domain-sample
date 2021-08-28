@@ -13,4 +13,6 @@ public interface EmployeeRepository {
   ContractingEmployees findUnderContracts();
 
   void registerExpiredContract(Employee employee);
+
+  EmployeeNumber registerNew();
 }
