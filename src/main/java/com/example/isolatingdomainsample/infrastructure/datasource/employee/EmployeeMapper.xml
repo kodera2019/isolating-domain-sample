@@ -78,6 +78,10 @@
         VALUES (#{employeeNumber.value}, #{phoneNumberId}, #{phoneNumber.value});
     </insert>
 
+    <insert id="insertInspireContract">
+        INSERT INTO 給与.契約中 (従業員ID) VALUES (#{employeeNumber.value});
+    </insert>
+
     <delete id="deleteEmployeeName">
         DELETE FROM 給与.従業員の名前 WHERE 従業員ID = #{employeeNumber.value}
     </delete>
