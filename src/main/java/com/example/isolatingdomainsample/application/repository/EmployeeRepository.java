@@ -23,5 +23,7 @@ public interface EmployeeRepository {
 
   void registerExpiredContract(Employee employee);
 
+  void registerInspireContract(EmployeeNumber employeeNumber);
+
   EmployeeNumber registerNew();
 }
