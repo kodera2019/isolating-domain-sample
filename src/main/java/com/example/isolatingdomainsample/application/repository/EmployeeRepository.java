@@ -1,5 +1,6 @@
 package com.example.isolatingdomainsample.application.repository;
 
+import com.example.isolatingdomainsample.domain.model.employee.ContractingEmployees;
 import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
 
@@ -8,6 +9,8 @@ import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
  */
 public interface EmployeeRepository {
   Employee choose(EmployeeNumber employeeNumber);
+
+  ContractingEmployees findUnderContracts();
 
   void registerExpiredContract(Employee employee);
 }
