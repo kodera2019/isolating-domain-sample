@@ -4,6 +4,7 @@ import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
 import com.example.isolatingdomainsample.domain.model.employee.MailAddress;
 import com.example.isolatingdomainsample.domain.model.employee.Name;
+import com.example.isolatingdomainsample.domain.model.employee.PhoneNumber;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -29,6 +30,12 @@ public interface EmployeeMapper {
 
   void deleteEmployeeMailAddress(@Param("employeeNumber") EmployeeNumber employeeNumber);
 
+  void insertEmployeePhoneNumberHistory(@Param("id") Integer id, @Param("employeeNumber") EmployeeNumber employeeNumber, @Param("phoneNumber") PhoneNumber phoneNumber);
+
+  void insertEmployeePhoneNumber(@Param("employeeNumber") EmployeeNumber employeeNumber, @Param("phoneNumberId") Integer phoneId, @Param("phoneNumber") PhoneNumber phoneNumber);
+
+  void deleteEmployeePhoneNumber(@Param("employeeNumber") EmployeeNumber employeeNumber);
+
   void deleteInspireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
 
   void insertExpireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
@@ -38,4 +45,6 @@ public interface EmployeeMapper {
   Integer newEmployeeNumber();
 
   Integer newEmployeeMailAddressIdentifier();
+
+  Integer newEmployeePhoneNumberIdentifier();
 }

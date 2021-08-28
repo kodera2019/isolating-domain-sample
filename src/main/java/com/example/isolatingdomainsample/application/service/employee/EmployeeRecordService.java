@@ -5,6 +5,7 @@ import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
 import com.example.isolatingdomainsample.domain.model.employee.MailAddressToChange;
 import com.example.isolatingdomainsample.domain.model.employee.NameToChange;
+import com.example.isolatingdomainsample.domain.model.employee.PhoneNumberToChange;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +37,13 @@ public class EmployeeRecordService {
    */
   public void registerMailAddress(MailAddressToChange mailAddressToChange) {
     employeeRepository.registerMailAddress(mailAddressToChange.employeeNumber(), mailAddressToChange.mailAddress());
+  }
+
+  /**
+   * 従業員電話番号登録
+   */
+  public void registerPhoneNumber(PhoneNumberToChange phoneNumberToChange) {
+    employeeRepository.registerPhoneNumber(phoneNumberToChange.employeeNumber(), phoneNumberToChange.phoneNumber());
   }
 
   /**
