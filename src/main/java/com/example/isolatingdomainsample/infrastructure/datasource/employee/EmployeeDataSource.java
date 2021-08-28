@@ -6,6 +6,7 @@ import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
 import com.example.isolatingdomainsample.domain.model.employee.MailAddress;
 import com.example.isolatingdomainsample.domain.model.employee.Name;
+import com.example.isolatingdomainsample.domain.model.employee.PhoneNumber;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -44,6 +45,14 @@ public class EmployeeDataSource implements EmployeeRepository {
     mapper.insertEmployeeMailAddressHistory(mailAddressId, employeeNumber, mailAddress);
     mapper.deleteEmployeeMailAddress(employeeNumber);
     mapper.insertEmployeeMailAddress(employeeNumber, mailAddressId, mailAddress);
+  }
+
+  @Override
+  public void registerPhoneNumber(EmployeeNumber employeeNumber, PhoneNumber phoneNumber) {
+    Integer phoneNumberId = mapper.newEmployeePhoneNumberIdentifier();
+    mapper.insertEmployeePhoneNumberHistory(phoneNumberId, employeeNumber, phoneNumber);
+    mapper.deleteEmployeePhoneNumber(employeeNumber);
+    mapper.insertEmployeePhoneNumber(employeeNumber, phoneNumberId, phoneNumber);
   }
 
   @Override
