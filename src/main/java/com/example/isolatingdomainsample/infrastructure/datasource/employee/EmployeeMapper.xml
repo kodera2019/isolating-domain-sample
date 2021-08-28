@@ -27,6 +27,11 @@
         WHERE 従業員.従業員ID = #{employeeNumber.value}
     </select>
 
+    <select id="selectContracts" resultType="com.example.isolatingdomainsample.domain.model.employee.Employee">
+        <include refid="selectEmployee" />
+        ORDER BY 従業員.従業員ID;
+    </select>
+
     <delete id="deleteInspireContract">
         DELETE FROM 給与.契約中 WHERE 従業員ID = #{employeeNumber.value}
     </delete>
