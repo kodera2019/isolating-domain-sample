@@ -13,7 +13,11 @@ public interface EmployeeMapper {
 
   List<Employee> selectContracts();
 
+  void insertEmployee(@Param("employeeNumber") EmployeeNumber employeeNumber);
+
   void deleteInspireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
 
   void insertExpireContract(@Param("employeeNumber") EmployeeNumber employeeNumber);
+
+  Integer newEmployeeNumber();
 }
