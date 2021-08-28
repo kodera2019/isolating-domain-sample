@@ -3,6 +3,7 @@ package com.example.isolatingdomainsample.application.repository;
 import com.example.isolatingdomainsample.domain.model.employee.ContractingEmployees;
 import com.example.isolatingdomainsample.domain.model.employee.Employee;
 import com.example.isolatingdomainsample.domain.model.employee.EmployeeNumber;
+import com.example.isolatingdomainsample.domain.model.employee.MailAddress;
 import com.example.isolatingdomainsample.domain.model.employee.Name;
 
 /**
@@ -14,6 +15,8 @@ public interface EmployeeRepository {
   ContractingEmployees findUnderContracts();
 
   void registerName(EmployeeNumber employeeNumber, Name name);
+
+  void registerMailAddress(EmployeeNumber employeeNumber, MailAddress mailAddress);
 
   void registerExpiredContract(Employee employee);
 
