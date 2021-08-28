@@ -22,6 +22,13 @@ public class EmployeeDataSource implements EmployeeRepository {
   }
 
   @Override
+  public EmployeeNumber registerNew() {
+    EmployeeNumber employeeNumber = new EmployeeNumber(mapper.newEmployeeNumber());
+    mapper.insertEmployee(employeeNumber);
+    return employeeNumber;
+  }
+
+  @Override
   public void registerExpiredContract(Employee employee) {
     mapper.deleteInspireContract(employee.employeeNumber());
     mapper.insertExpireContract(employee.employeeNumber());
