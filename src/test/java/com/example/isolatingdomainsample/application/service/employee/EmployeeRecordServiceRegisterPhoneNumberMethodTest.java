@@ -18,7 +18,7 @@ class EmployeeRecordServiceRegisterPhoneNumberMethodTest {
   EmployeeRecordService employeeRecordService;
 
   @Test
-  void 従業員名を登録できる() {
+  void 従業員電話番号を登録できる() {
     EmployeeNumber employeeNumber = employeeRecordService.prepareNewContract();
 
     PhoneNumberToChange phoneNumberToChange = new PhoneNumberToChange(employeeNumber, new PhoneNumber("03-1234-5678"));
