@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: htmlhead(~{::title})">
+    <meta charset="utf-8"/>
+    <title>従業員情報の登録の確認</title>
+</head>
+<body>
+<header th:replace="fragments/navigation::navigation('')"></header>
+
+<main class="container">
+    <header th:replace="fragments/header::header('従業員情報の登録の確認')"></header>
+
+    <section class="employeeConfirm">
+        <div class="message is-info">
+            <p class="message-body has-text-centered">
+                従業員情報を登録します。<br>
+                確認の上、登録するボタンを押してください。
+            </p>
+        </div>
+
+        <table class="table is-bordered is-fullwidth">
+            <tr>
+                <th class="has-text-centered tableHeader">氏名</th>
+                <td>
+                    <p th:text="${employeeToRegister.name()}">山田 太郎</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="has-text-centered tableHeader">メールアドレス</th>
+                <td>
+                    <p th:text="${employeeToRegister.mailAddress()}">someone@example.com</p>
+                </td>
+            </tr>
+            <tr>
+                <th class="has-text-centered tableHeader">電話番号</th>
+                <td>
+                    <p th:text="${employeeToRegister.phoneNumber()}">0120-888-888</p>
+                </td>
+            </tr>
+        </table>
+        <div class="formFooter has-text-centered">
+            <a class="button is-light"
+               th:href="@{/employees/register/input/again}">入力に戻る</a>
+            <a class="button is-primary is-outlined"
+               th:href="@{/employees/register/register}">登録</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

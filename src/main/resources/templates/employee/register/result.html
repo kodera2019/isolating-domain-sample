@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: htmlhead(~{::title})">
+    <meta charset="utf-8"/>
+    <title>従業員情報の登録の完了</title>
+</head>
+<body>
+<header th:replace="fragments/navigation::navigation('')"></header>
+
+<main class="container">
+    <header th:replace="fragments/header::header('従業員情報の登録の完了')"></header>
+    <section class="employeeInfo">
+        <div class="message is-success">
+            <p class="message-body"
+               th:text="${name} + ' (' + ${employeeNumber} + ') ' + 'さんを登録しました。'">
+                登録完了しました。
+            </p>
+        </div>
+
+        <div class="has-text-centered">
+            <a class="button is-light"
+               th:href="@{/employees}">従業員一覧に戻る</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

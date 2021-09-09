@@ -10,7 +10,7 @@ public class EmployeeToRegister {
 
   @NotNull
   @Valid
-  private Name name;
+  Name name;
 
   @NotNull
   @Valid
